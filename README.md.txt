@@ -1,0 +1,1 @@
+Interface de aplicativo móvel para currículos feito no React Native

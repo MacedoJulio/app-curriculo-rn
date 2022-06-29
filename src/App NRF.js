@@ -2,8 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, Image, View, Alert, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather'
 
-import foto from './src/assets/foto.jpg';
-import Card from './src/assets/components/Card';
+import foto from './assets/foto.jpg';
+
 
 const App = () => {
 
@@ -12,13 +12,13 @@ const App = () => {
     switch(rede_social){
 
       case 'linkedin':
-        Alert.alert('https://www.linkedin.com/in/julio-cesar-macedo-5437711b8/')
+        Alert.alert('https://linkedin.com/in/juliocmacedo')
         break
         case 'github':
-        Alert.alert('https://github.com/MacedoJulio')
+        Alert.alert('https://github.com/in/juliocmacedo')
         break
         case 'instagram':
-        Alert.alert('https://www.instagram.com/_juliomaceedo/')
+        Alert.alert('https://instagram.com/in/juliocmacedo')
         break
 
     }
@@ -30,7 +30,7 @@ const App = () => {
         <View style={style.container_cabecalho}>
           <Image source={foto} style={style.foto} />
           <Text style={style.nome}>Júlio César Macedo</Text>
-          <Text style={style.funcao}>Desenvolvedor Mobile </Text>
+          <Text style={style.funcao}>Desenvolvedor Mobile</Text>
           <View style={style.redes_sociais}>
             <TouchableOpacity onPress={() => handleRedeSocial ('github')}>
             <Icon name='github' size={30} color= 'blue'/>
@@ -40,24 +40,36 @@ const App = () => {
             </TouchableOpacity>
             <TouchableOpacity onPress={() => handleRedeSocial ('instagram')}>
             <Icon name='instagram'size={30} color= 'red'/>
-            </TouchableOpacity>
-
+            </TouchableOpacity> 
           </View>
         </View>
 
-    <Card titulo="Formação Acadêmica :">
-      <Text>FAETEC - Montagem e Manutenção</Text>
-      <Text>Estácio de Sá - Sistemas de Informação</Text>
-    </Card>
-    <Card titulo="Cursos :">
-      <Text>React Native </Text>
-      <Text>Java</Text>
-      <Text>HTML5 e CSS3</Text>
-      <Text>Banco de Dados e SQL</Text>
-      <Text>GIT e GITHub</Text>
-       </Card>
-    
-    
+      <View style={style.card_container}>
+        <View style={style.card}>
+          <View style={style.card_header}>
+            <Text style={style.card_content_text}>Formação Acadêmica</Text>
+        </View>
+        <View style={style.card_content}>
+          <Text>FAETEC - Montagem e Manutenção</Text>
+          <Text>UNESA - Sistemas de Informação</Text>
+          </View>
+        </View>
+      </View>
+
+      <View style={style.card_container}>
+        <View style={style.card}>
+          <View style={style.card_header}>
+            <Text style={style.card_content_text}>Cursos</Text>
+        </View>
+        <View style={style.card_content}>
+          <Text>HTML5 e CSS3</Text>
+          <Text>React Native</Text>
+          <Text>Java</Text>
+          <Text>JavaScript</Text>
+          </View>
+        </View>
+      </View>
+
       </View>
       </>
   );
@@ -96,6 +108,27 @@ redes_sociais: {
   justifyContent:  'space-evenly',
   width: '50%',
   marginTop: 20
+},
+card_container: {
+  width: '100%',
+  justifyContent: 'center',
+  alignItems: 'center',
+  marginTop: 20
+},
+card: {
+  width: '60%',
+  borderRadius: 5,
+  borderWidth: 1,
+  borderColor: '#939393',
+  padding: 5
+},
+card_content: {
+  marginTop: 5,
+  marginBottom: 5
+},
+card_content_text: {
+  fontWeight: 'bold',
+  fontSize: 16,
 }
 
 })
