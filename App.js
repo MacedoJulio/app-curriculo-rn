@@ -12,7 +12,7 @@ const App = () => {
     switch(rede_social){
 
       case 'linkedin':
-        Alert.alert('https://www.linkedin.com/in/julio-cesar-macedo-5437711b8/')
+        Alert.alert('https://www.linkedin.com/in/juliocmacedo/')
         break
         case 'github':
         Alert.alert('https://github.com/MacedoJulio')
